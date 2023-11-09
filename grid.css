@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-page {
+    display: grid;
+    grid-template-columns: repeat(5 1fr);
+    grid-template-rows: 182px auto 367px 391px;
+    grid-template-areas: 
+    'navtop navtop navtop navtop navtop'
+    'navside heading heading heading heading'
+    'navside content1 content1 content2 content2'
+    'navside content3 content3 content4 content4';
+    gap: 1rem;
+}
+.navtop { 
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-area: navtop;
+    font-size: 64px;
+    background: #D9D9D9;
+}
+.navside { 
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-area: navside;
+    font-size: 64px;
+    background: #E4B6B6;
+}
+.heading { 
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-area: heading;
+    font-size: 58px;
+    background: #8D99DC;
+}
+.content1 { 
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-area: content1;
+    font-size: 64px;
+    background: #D5E4B6;
+}
+.content2 { 
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-area: content2;
+    font-size: 64px;
+    background: #E4CCB6;
+}
+.content3 { 
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-area: content3;
+    font-size: 64px;
+    background: #B6E4D0;
+}
+.content4 { 
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-area: content4;
+    font-size: 64px;
+    background: #F39238;
+}
+
+@media screen and (max-width: 820px) {
+    .grid-page {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        'navtop navtop navtop navtop'
+        'heading heading heading heading'
+        'content1 content2 content2 content2'
+        'content3 content3 content3 content4';
+    }
+    .navside {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .grid-page {
+        grid-template-columns: 1fr;
+        grid-template-rows: 182px 418px 214px;
+        grid-template-areas: 
+        'navtop'
+        'content2'
+        'content4';
+    }
+    .navside { display: none;}
+    .heading { display: none;}
+    .content1 { display: none;}
+    .content3 { display: none;}
+}
